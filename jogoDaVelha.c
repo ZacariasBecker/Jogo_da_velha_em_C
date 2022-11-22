@@ -27,6 +27,7 @@ void jogoDaVelha()
 
         if (seletor < 1 || seletor > 3)
         {
+            system("cls");
             printf("\nOpcao invalida!\n\n");
         }
     } while (seletor < 1 || seletor > 3);
@@ -46,19 +47,19 @@ void jogoDaVelha()
 
 void jogoDaVelha_Regras()
 {
-    printf("Regras do Jogo da Velha:\n");
-    printf("O objetivo do jogo eh fazer uma sequencia de tres simbolos iguais, seja em linha vertical, horizontal ou diagonal, enquanto tenta impedir que seu adversario faca o mesmo.\n");
-    printf("======================\n");
+    system("cls");
+    printf("\nRegras do Jogo da Velha:\n");
+    printf("O objetivo do jogo eh fazer uma sequencia de tres simbolos iguais, seja em linha vertical, horizontal ou diagonal, enquanto tenta impedir que seu adversario faca o mesmo.\n\n");
     jogoDaVelha();
 }
 
 void jogoDaVelha_Jogar()
 {
+    system("cls");
     int seletor;
 
     do
     {
-        printf("======================\n");
         printf("1) Jogar contra pessoa\n");
         printf("2) Jogar contra maquina\n");
         printf("3) Voltar\n");
@@ -67,9 +68,12 @@ void jogoDaVelha_Jogar()
 
         if (seletor < 1 || seletor > 3)
         {
+            system("cls");
             printf("\nOpcao invalida!\n\n");
         }
     } while (seletor < 1 || seletor > 3);
+
+    system("cls");
 
     switch (seletor)
     {
@@ -87,6 +91,7 @@ void jogoDaVelha_Jogar()
 
 int jogoDaVelha_Ganhador(char matriz[3][3])
 {
+
     if (
         // Condicao de vitoria para o Jogador 1
         // Mesma Linha
@@ -133,12 +138,14 @@ int jogoDaVelha_Ganhador(char matriz[3][3])
 
 void jogoDaVelha_JogarPessoa()
 {
+    system("cls");
+
     int ganhador = 0, rodada = 1, seletor;
     char matriz[3][3] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
 
     do
     {
-        printf("\n======================\n");
+        // printf("\n======================\n");
         printf("Rodada: %d\n", rodada);
         printf("Jogador 1: x\n");
         printf("Jogador 2: o\n\n");
@@ -210,7 +217,7 @@ void jogoDaVelha_JogarMaquina()
 
     do
     {
-        printf("\n======================\n");
+        // printf("\n======================\n");
         printf("Rodada: %d\n", rodada);
         printf("Jogador: x\n");
         printf("Maquina: o\n\n");
@@ -276,6 +283,7 @@ void jogoDaVelha_JogarMaquina()
 
 int *jogoDaVelha_JogadaDaMaquina(char matriz[3][3])
 {
+    system("cls");
     static int jogada[2] = {0, 0};
 
     do
@@ -314,11 +322,13 @@ int *jogoDaVelha_Jogada(char matriz[3][3])
 
     } while (matriz[jogada[0] - 1][jogada[1] - 1] != ' ');
 
+    system("cls");
     return jogada;
 }
 
 void jogoDaVelha_ExibeTabuleiro(char matriz[3][3])
 {
+
     printf("     1   2   3\n");
     printf("     v   v   v\n");
     printf("1>   %c | %c | %c \n", matriz[0][0], matriz[0][1], matriz[0][2]);
@@ -330,7 +340,9 @@ void jogoDaVelha_ExibeTabuleiro(char matriz[3][3])
 
 int main()
 {
+    system("cls");
     jogoDaVelha();
+    system("cls");
 
     return 0;
 }
