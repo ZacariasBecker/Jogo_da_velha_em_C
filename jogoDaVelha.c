@@ -143,7 +143,7 @@ void jogoDaVelha_JogarPessoa()
         {
             printf("\nVez do jogador 1 (x):\n");
             int *jogada = jogoDaVelha_Jogada(matriz);
-            matriz[*jogada - 1][(*jogada + 1) - 1] = 'x';
+            matriz[*jogada - 1][*(jogada + 1) - 1] = 'x';
         }
         else
         {
